@@ -11,9 +11,13 @@
 
 int my_str_is(char const *str, char const *char_in)
 {
+    int res;
+
     ERR_D(PTR_ERR, "In: my_str_isnum", false, (!str || !char_in));
     for (int i = 0; str[i]; i++) {
-        if (my_get_index(char_in, str[i]) == -1)
+        res = my_strfind(char_in, str[i]);
+        ERR_D(UNDEF_ERR, "In: my_str_isnum", false, (res == -2));
+        if (res == -1)
             return 0;
     }
     return 1;

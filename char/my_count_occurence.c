@@ -7,9 +7,9 @@
 
 #include "error.h"
 
-float count_occurence(char const *str, char const c)
+int count_occurence(char const *str, char const c)
 {
-    float count = 0;
+    int count = 0;
 
     ERR_D(PTR_ERR, "In: my_count_occurence", KO, (!str));
     for (int i = 0; str[i]; i++) {
