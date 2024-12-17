@@ -1,7 +1,8 @@
-*c.log
+*.log
 *.gc*
 *.sw*
 *.a
+*.o
 \#*#
 *~
 vgcore.*
@@ -12,3 +13,4 @@ unit_test
 prog
 :
 q
+vg
