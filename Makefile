@@ -15,7 +15,7 @@ W += -Wuninitialized -Wmaybe-uninitialized
 
 DEBUG := -g -ggdb3
 
-CPPFLAGS := -I ../../include/
+CPPFLAGS := -I include/
 CFLAGS := $(W)
 
 ifeq ($(d), t)
@@ -156,7 +156,6 @@ all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	@ar rc $@ $^
-	@mv $@ ../
 
 $(BUILD_DIR)/%.o: %.c
 	@mkdir -p $(dir $@)
@@ -166,7 +165,7 @@ clean:
 	@rm -rf $(BUILD_DIR)
 
 fclean: clean
-	@rm -f ../$(TARGET)
+	@rm -f $(TARGET)
 
 .NOTPARALLEL:
 re: fclean $(TARGET)
